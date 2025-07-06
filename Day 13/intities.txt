@@ -1,0 +1,88 @@
+Reserved Characters:
+
+&lt; or &#60;: Represents the less-than sign <.
+&gt; or &#62;: Represents the greater-than sign >.
+&amp; or &#38;: Represents the ampersand &.
+&quot; or &#34;: Represents the double quote " (used within attributes).
+&apos; or &#39;: Represents the single quote ' (used within attributes, especially in XML). 
+
+
+
+Other Useful Entities:
+
+&nbsp; or &#160;: Represents a non-breaking space, which prevents line breaks at that space.
+&copy; or &#169;: Represents the copyright symbol ©.
+&reg; or &#174;: Represents the registered trademark symbol ®.
+&trade; or &#8482;: Represents the trademark symbol ™.
+&euro; or &#8364;: Represents the euro currency symbol €.
+&cent; or &#162;: Represents the cent symbol ¢.
+&pound; or &#163;: Represents the pound symbol £. 
+
+this is code tag
+
+<code>
+  // Example of inline code:
+  variable = 10;
+</code>
+
+this is code with harry rags 
+
+&lt;  for <
+&gt;  for >
+&amp; for &
+&nbsp; for a non-breaking space
+&copy; for ©
+
+this is the canvas tag
+
+<canvas id="myCanvas" width="200" height="100"></canvas>
+
+<blockquote> Tag
+
+<blockquote cite="source-url">
+  Quotation text here.
+</blockquote>
+
+<q> Tag
+
+<q cite="source-url">Quotation text here.</q>
+
+Specifying Character Set in HTML
+
+<meta charset="UTF-8">
+
+Examples
+
+Using UTF-8
+<meta charset="UTF-8">
+
+Using ISO-8859-1
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+Examples of Obsolete Tags
+The <font> Tag
+Used to specify text color, size, and font.
+
+<font color="red" size="3" face="verdana">This is some text</font>
+
+The <center> Tag
+Used to center-align elements.
+
+<center>This text will be centered</center>
+
+The <u> Tag
+Used to underline text.
+
+<u>This text will be underlined</u>
+
+Modern Alternatives
+It's better to use CSS for styling and layout as it separates content from presentation.
+
+Replacing <font>
+<span style="color:red; font-size:16px; font-family:verdana;">This is some text</span>
+
+Replacing <center>
+<div style="text-align:center;">This text will be centered</div>
+
+Replacing <u>
+<span style="text-decoration:underline;">This text will be underlined</span>
