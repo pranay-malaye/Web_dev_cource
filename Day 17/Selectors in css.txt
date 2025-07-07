@@ -1,0 +1,214 @@
+Selectors in css
+
+1. Universal Selector
+
+*: Selects all elements.
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+2. Type Selector
+
+element: Selects all elements of a given type.
+
+p {
+    color: blue;
+}
+
+3. Class Selector
+
+.class: Selects all elements with a specific class.
+
+.highlight {
+    background-color: yellow;
+}
+
+4. ID Selector
+
+#id: Selects a single element with a specific ID.
+
+#header {
+    font-size: 24px;
+}
+
+5. Attribute Selector
+
+[attribute]: Selects elements with a specific attribute.
+
+input[type="text"] {
+    border: 1px solid gray;
+}
+
+[attribute="value"]: Selects elements with a specific attribute value.
+
+a[target="_blank"] {
+    color: red;
+}
+
+6. Descendant Selector
+
+ancestor descendant: Selects all descendants of a specified ancestor.
+
+div p {
+    color: green;
+}
+
+7. Child Selector
+
+parent > child: Selects direct children of a specified parent.
+
+ul > li {
+    list-style-type: none;
+}
+
+8. Adjacent Sibling Selector
+
+element1 + element2: Selects the first sibling that follows another element.
+
+h1 + p {
+    margin-top: 0;
+}
+
+9. General Sibling Selector
+
+element1 ~ element2: Selects all siblings that follow another element.
+
+h1 ~ p {
+    color: gray;
+}
+
+10. Group Selector
+
+selector1, selector2: Applies the same styles to multiple selectors.
+
+h1, h2, h3 {
+    font-family: Arial, sans-serif;
+}
+
+11. Pseudo-Classes
+
+:hover, :active, :focus, etc. (as mentioned in the previous response).
+
+a:hover {
+    text-decoration: underline;
+}
+
+12. Pseudo-Elements
+
+::before, ::after, ::first-line, ::first-letter, etc. (as mentioned in the previous response).
+
+p::first-line {
+    font-weight: bold;
+}
+
+13. Negation Pseudo-Class
+
+:not(selector): Selects elements that do not match the given selector.
+
+div:not(.active) {
+    opacity: 0.5;
+}
+
+14. Nth Child Selectors
+
+:nth-child(n), :nth-of-type(n), :first-child, :last-child, etc.
+
+li:nth-child(2) {
+    color: orange;
+}
+
+
+
+Pseudo-Classes
+
+:hover - Applies when the user hovers over an element.
+
+a:hover {
+    color: red;
+}
+
+:active - Applies when an element is being activated (e.g., when a button is pressed).
+
+button:active {
+    background-color: blue;
+}
+
+:focus - Applies when an element has focus (e.g., an input field).
+
+input:focus {
+    border: 2px solid green;
+}
+
+:visited - Applies to links that the user has already visited.
+
+a:visited {
+    color: purple;
+}
+
+:first-child - Applies to the first child of a parent element.
+
+p:first-child {
+    font-weight: bold;
+}
+
+:last-child - Applies to the last child of a parent element.
+
+p:last-child {
+    font-style: italic;
+}
+
+:nth-child(n) - Applies to the nth child of a parent element.
+
+li:nth-child(2) {
+    color: orange;
+}
+
+:nth-of-type(n) - Applies to the nth child of a specific type.
+
+p:nth-of-type(2) {
+    color: blue;
+}
+
+:not(selector) - Applies to elements that do not match the given selector.
+
+div:not(.active) {
+    opacity: 0.5;
+}
+
+:checked - Applies to checked input elements (like checkboxes or radio buttons).
+
+input:checked {
+    background-color: yellow;
+}
+
+Pseudo-Elements
+
+::before - Inserts content before an element's content.
+
+h1::before {
+    content: "Note: ";
+    color: red;
+}
+
+::after - Inserts content after an element's content.
+
+h1::after {
+    content: " - End";
+    color: blue;
+}
+
+::first-line - Applies styles to the first line of a block of text.
+
+p::first-line {
+    font-weight: bold;
+}
+
+::first-letter - Applies styles to the first letter of a block of text.
+
+p::first-letter {
+    font-size: 2em;
+    color: green;
+}
+

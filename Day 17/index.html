@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css selectors</title>
+    <style>
+        /* Element selectors */
+        div{
+            background-color: red;
+        }
+
+        /* class selector */
+        .red{
+            background-color: orange;
+        }
+
+        /* id selector */
+        #pink{
+            background-color:blue;
+        }
+
+        /* child selector */
+        div > p {
+            color: green;
+            background-color: aqua;
+        }
+
+        /* decendant selector */
+        div p{
+            color: brown;
+            background-color: orchid;
+        }
+
+        /* universal selector */
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        /* pseudo selector */
+        a:visited{
+            color: chartreuse;
+        }
+
+        a:link{
+            color: fuchsia;
+        }
+
+        a:active{
+            color: crimson;
+        }
+
+        a:hover{
+            background-color: lightpink;
+        }
+
+        p:first-child{
+            background-color: rgb(25, 143, 182);
+        }
+    </style>
+</head>
+<body>
+    <div>This is Element selector</div>
+
+    <div class="red">This is class selector</div>
+
+    <div id="pink">This is id= selector</div>
+
+    <div>This is child selector
+        <p>I am a child selector</p>
+    </div>
+
+    <div>this is desendant selector
+        <article>
+            <p>i am a desendant selector</p>
+        </article>
+    </div>
+
+    <main>pseudo selector
+        <a href="https://www.google.com">Open google</a>
+        <a href="https://www.amazon.com">Open amazon</a>
+        <a href="https://www.github.com">Open github</a>
+    </main>
+    
+    <div>
+        <main class="one">
+        <p>first selectors</p>
+        <p>second selectors</p>
+    </main>
+    </div>
+
+    
+
+</body>
+</html>
