@@ -1,0 +1,343 @@
+CSS ALL FONT PROPERTIES:
+
+1. font-family
+
+Specifies the typeface to be used for the text. You can list multiple fonts as fallbacks.
+
+font-family: "Arial", sans-serif;
+
+2. font-size
+
+Sets the size of the font. You can use various units like pixels (px), points (pt), ems (em), or rems (rem).
+
+font-size: 16px;
+
+3. font-weight
+
+Defines the thickness of the font. Common values include:
+
+normal (400)
+
+bold (700)
+
+bolder
+
+lighter
+
+Numeric values from 100 to 900
+
+font-weight: bold;
+
+4. font-style
+
+Specifies the style of the font, such as:
+
+normal
+
+italic
+
+oblique
+
+font-style: italic;
+
+5. font-variant
+
+Controls the use of small-caps or other stylistic variations.
+
+font-variant: small-caps;
+
+6. font-stretch
+
+Allows you to make the font narrower or wider.
+
+font-stretch: condensed;
+
+7. line-height
+
+Sets the height of a line box, which affects the spacing between lines of text.
+
+line-height: 1.5;
+
+8. letter-spacing
+
+Adjusts the space between characters.
+
+letter-spacing: 2px;
+
+9. word-spacing
+
+Adjusts the space between words.
+
+word-spacing: 4px;
+
+10. text-align
+
+Defines the horizontal alignment of text within its container.
+
+text-align: center;
+
+11. text-decoration
+
+Adds decorations to text, such as:
+
+none
+
+underline
+
+overline
+
+line-through
+
+text-decoration: underline;
+
+12. text-transform
+
+Controls the capitalization of text:
+
+none
+
+capitalize
+
+uppercase
+
+lowercase
+
+text-transform: uppercase;
+
+13. text-shadow
+
+Adds shadow effects to text. You can specify the horizontal and vertical offsets, blur radius, and color.
+
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+14. color
+
+Sets the color of the text. You can use color names, hex codes, RGB, or HSL values.
+
+color: #333;
+
+15. opacity
+
+Controls the transparency of the text.
+
+opacity: 0.8;
+
+16. font
+
+A shorthand property that allows you to set multiple font properties in one declaration. It can include font-style, font-variant, font-weight, font-size, line-height, and font-family.
+
+font: italic small-caps bold 16px/1.5 "Arial", sans-serif;
+
+Example Usage
+
+Here’s an example of how you might use these properties in a CSS rule:
+
+h1 {
+    font-family: "Georgia", serif;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+CSS ALL TEXT PROPERTIES
+
+1. color
+
+Sets the color of the text.
+
+color: #333; /* Dark gray */
+
+2. font-family
+
+Specifies the typeface for the text.
+
+font-family: "Arial", sans-serif;
+
+3. font-size
+
+Defines the size of the text.
+
+font-size: 16px; /* 16 pixels */
+
+4. font-weight
+
+Specifies the thickness of the text. Common values include:
+
+normal (400)
+
+bold (700)
+
+Numeric values (100 to 900)
+
+font-weight: bold;
+
+5. font-style
+
+Defines the style of the text, such as:
+
+normal
+
+italic
+
+oblique
+
+font-style: italic;
+
+6. font-variant
+
+Controls the use of small-caps or other stylistic variations.
+
+font-variant: small-caps;
+
+7. font-stretch
+
+Allows you to make the font narrower or wider.
+
+font-stretch: condensed;
+
+8. line-height
+
+Sets the height of a line box, affecting the spacing between lines of text.
+
+line-height: 1.5; /* 1.5 times the font size */
+
+9. letter-spacing
+
+Adjusts the space between characters.
+
+letter-spacing: 2px; /* 2 pixels of space between letters */
+
+10. word-spacing
+
+Adjusts the space between words.
+
+word-spacing: 4px; /* 4 pixels of space between words */
+
+11. text-align
+
+Defines the horizontal alignment of text within its container.
+
+text-align: center; /* Center-aligned text */
+
+12. text-decoration
+
+Adds decorations to text, such as:
+
+none
+
+underline
+
+overline
+
+line-through
+
+text-decoration: underline; /* Underlined text */
+
+13. text-transform
+
+Controls the capitalization of text:
+
+none
+
+capitalize
+
+uppercase
+
+lowercase
+
+text-transform: uppercase; /* All uppercase letters */
+
+14. text-shadow
+
+Adds shadow effects to text. You can specify the horizontal and vertical offsets, blur radius, and color.
+
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow effect */
+
+15. text-indent
+
+Specifies the indentation of the first line of text.
+
+text-indent: 20px; /* Indent the first line by 20 pixels */
+
+16. text-overflow
+
+Specifies how overflowed content that is not displayed should be signaled to the user. Common values include:
+
+clip
+
+ellipsis
+
+text-overflow: ellipsis; /* Show "..." for overflowed text */
+
+17. white-space
+
+Controls how whitespace inside an element is handled. Common values include:
+
+normal
+
+nowrap
+
+pre
+
+pre-wrap
+
+white-space: nowrap; /* Prevents text from wrapping */
+
+18. overflow-wrap
+
+Specifies whether the browser can break lines within words to prevent overflow.
+
+overflow-wrap: break-word; /* Break long words to prevent overflow */
+
+19. direction
+
+Specifies the text direction. Common values include:
+
+ltr (left-to-right)
+
+rtl (right-to-left)
+
+direction: rtl; /* Right-to-left text direction */
+
+20. unicode-bidi
+
+Used in conjunction with the direction property to control the handling of bidirectional text.
+
+unicode-bidi: bidi-override; /* Override the default bidirectional algorithm */
+
+Example Usage
+
+Here’s an example of how you might use these properties in a CSS rule:
+
+p {
+    color: #555;
+    font-family: "Verdana", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.6;
+    text-align: justify;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+CSS COLOR PROPERTIES
+
+             color:darkred; 
+             color: #0BEE0B; 
+             color: rgb(76, 125, 59);
+             color: rgba(255, 22, 5, 0.175) 
+            color: hsl(130, 61%, 44%);
+            background-color: rgb(76, 125, 59);
+	
+
+	1.Color Keywords
+	2.Hex Color Code
+	3.RGB
+	4.RGBA
+        5.HSL
