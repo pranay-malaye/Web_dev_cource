@@ -1,0 +1,297 @@
+CSS Specificity
+
+
+CSS Specificity helps determine what style will be applied to the HTML element(s) when there are overlapping or multiple CSS rules.
+
+It is a value or weight assigned to a CSS selector. The higher the specificity, the more precedence the selector has.
+
+Let's consider the following code:
+
+<html>
+<head>
+    <style>
+        *{
+            color: gray;
+        }
+        #title{
+            color: red;
+        }
+        .h1{
+            color: blue;
+        }
+        h1{
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title" class="h1" style="color:purple">CodeWithHarry</h1>
+</body>
+</html>
+
+Here the question is, what color will h1 be assigned to? This is calculated based on the selector's components which we will discuss in this tutorial.
+
+The Cascade Algorithm
+CSS stands for Cascading Stylesheets. The cascade is the algorithm for solving conflicts where multiple CSS rules apply to an HTML element. It's the reason that the text of the button styled with the above CSS will be purple.
+
+Understanding the cascade algorithm helps you understand how the browser resolves conflicts like this. The cascade algorithm has 4 distinct stages.
+
+Position and order of appearance: the order in which your CSS rules appear
+Specificity: an algorithm that determines which CSS selector has the strongest match
+Origin: the order in which CSS appears and where it comes from, whether that is a browser style, CSS from a browser extension, or your authored CSS
+Importance: some CSS rules are weighted more heavily than others, especially with the !important rule type
+Let's look into all these one by one.
+
+Effect of Position
+If there are two rules that have selectors of identical specificity, the last one to be declared wins. In an HTML page, you can add styles in different ways: through a <link> tag, a <style> tag, or directly in the element's style attribute. If you have one <link> tag at the top of your page and another at the bottom, the styles from the bottom one will be used. The same goes for <style> tags; the ones lower down on the page take priority.
+
+An inline style attribute with CSS declared in it will override all other CSS, regardless of its position, unless a declaration has !important defined.
+
+If the browser doesn't support a property, it is ignored!
+
+Specificity
+CSS specificity determines which style rules get applied to an element when there are conflicts. Higher specificity means the style will be used. It's calculated based on a point system involving inline styles, IDs, classes, and tag names.
+
+Inline Styles
+Inline styles have the highest specificity and will always override styles if other selector(s) are also defined.
+
+<html>
+<head>
+    <style>
+        *{
+            color: gray;
+        }
+        #title{
+            color: red;
+        }
+        .h1{
+            color: blue;
+        }
+        h1{
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title" class="h1" style="color:purple">CodeWithHarry</h1>
+</body>
+</html>
+
+cwh tutorial image
+
+Here, you can see that the color: purple is applied to the h1 tag.
+
+ID Selector
+The ID selector also has high specificity but comes after the inline Style specificity. So, if we have an ID and other selectors except the inline style, then the element will take the ID selector properties and values.
+
+<head>
+    <style>
+        *{
+            color: gray;
+        }
+        #title{
+            color: red;
+        }
+        .h1{
+            color: blue;
+        }
+        h1{
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title" class="h1">CodeWithHarry</h1>
+</body>
+</html>
+
+cwh tutorial image
+
+Here, you can see the color: red is applied to the h1 tag.
+
+Class and Attribute Selectors
+Class selectors and attribute selectors have moderate specificity. Suppose the element has a class or attribute selector and not an inline style or ID selector, then the element will take properties and values from the class or attribute selector.
+
+<head>
+    <style>
+        *{
+            color: gray;
+        }
+        .h1{
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="h1">CodeWithHarry</h1>
+</body>
+</html>
+
+cwh tutorial image
+
+Here, you can see color: pink is applied to the h1 tag.
+
+Element Selector
+Element selectors like <p>, <div>, <a>, etc. have low specificity.
+
+<head>
+    <style>
+        *{
+            color: gray;
+        }
+        h1{
+            color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="h1">CodeWithHarry</h1>
+</body>
+</html>
+
+cwh tutorial image
+
+Here, you can see color: tomato is applied to the h1 tag.
+
+Universal Selector
+Universal selectors (*) and combining selectors like not, first-child, and last-child have the lowest specificity.
+
+<head>
+    <style>
+        *{
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="h1">CodeWithHarry</h1>
+</body>
+</html>
+
+cwh tutorial image
+
+Here, you can see color: gray is applied to the h1 tag.
+
+So, the order of specificity is:
+
+Inline Style > ID Selector > Class or Attribute Selector > Element Selector > Universal Selector
+
+Specificity Calculation
+To calculate specificity, assign a value to each part of the selector:
+
+Universal Selector: 0
+Element selectors and pseudo-elements: 1
+Class selectors, attribute selectors, and pseudo-classes: 10
+ID selectors: 100
+Inline styles: 1000
+Then, add up the values of all the parts in the selector.
+
+Here is an example:
+
+<h1 id="title" class="h1">CodeWithHarry</h1>
+
+Here, the specificity value will be 111 because ID has a specificity of 100, the class has a specificity of 10, and the h1 element has a specificity of 1.
+
+In the case of a specificity tie, the rule that appears last in the CSS is applied.
+
+Importance
+The !important flag in CSS is used to give a particular style rule the highest level of importance, overriding any other competing styles. When you add !important to a CSS rule, it will take precedence over other rules affecting the same element, regardless of their specificity. For example, if you have:
+
+p {
+  color: red !important;
+}
+ 
+p {
+  color: blue;
+}
+
+The text in the <p> element will be red, not blue, because the !important flag makes that rule more important.
+
+An !important at the end of a CSS value gets a specificity score of 10,000 points. This is the highest specificity that one individual item can get.
+
+However, it's generally best to use !important sparingly, as it can make debugging and maintaining your stylesheets more complicated. It can override styles in ways that are hard to trace, leading to unexpected results.
+
+Quick Quiz
+What will be the specificity value of the following selector:
+
+a.harryclass.rohan-class[href]:hover {
+  color: red;
+}
+
+Solution
+To calculate the specificity value of the selector a.harryclass.rohan-class[href]:hover, you can break down its components:
+
+Element selectors: a contributes 1 point.
+Class selectors: .harryclass and .rohan-class each contribute 10 points, totaling 20 points.
+Attribute selector: [href] contributes 10 points.
+Pseudo-class: :hover adds another 10 points.
+Add up all these values:
+
+1 (element) + 20 (classes) + 10 (attribute) + 10 (pseudo-class) = 41.
+
+
+
+CSS specificity and the cascade are two fundamental concepts in CSS that work together to determine how styles are applied to HTML elements. Let’s break down each concept:
+
+CSS Specificity
+
+As mentioned earlier, specificity is a mechanism that determines which CSS rule is applied when multiple rules could apply to the same element. Specificity is calculated based on the types of selectors used in a rule, and it follows a hierarchy:
+
+Inline styles: Styles applied directly to an element using the style attribute (e.g., <div style="color: red;">) have the highest specificity (1,0,0,0).
+
+ID selectors: Selectors that use an ID (e.g., #header) have a specificity of (0,1,0,0).
+
+Class selectors, attribute selectors, and pseudo-classes: These have a specificity of (0,0,1,0).
+
+Type selectors and pseudo-elements: These have a specificity of (0,0,0,1).
+
+The specificity score is calculated by counting the number of each type of selector in a rule. The higher the score, the more specific the rule is, and thus it takes precedence over less specific rules.
+
+The Cascade
+
+The cascade refers to the order in which CSS rules are applied when there are conflicting styles. The cascade is influenced by three main factors:
+
+Specificity: As discussed, more specific selectors take precedence over less specific ones.
+
+Source Order: If two rules have the same specificity, the one that appears later in the CSS file will take precedence. This means that the order in which styles are defined matters.
+
+Importance: The !important declaration can override normal specificity rules. A rule marked with !important will take precedence over any other conflicting rules, regardless of specificity. However, it’s generally recommended to use !important sparingly, as it can make debugging and maintaining CSS more difficult.
+
+Example of Specificity and Cascade
+
+Consider the following CSS:
+
+/* Rule 1 */
+#header {
+    color: blue; /* Specificity: 0,1,0,0 */
+}
+
+/* Rule 2 */
+.header {
+    color: red; /* Specificity: 0,0,1,0 */
+}
+
+/* Rule 3 */
+h1 {
+    color: green; /* Specificity: 0,0,0,1 */
+}
+
+/* Rule 4 */
+h1 {
+    color: yellow; /* Specificity: 0,0,0,1 */
+}
+
+/* Rule 5 */
+h1 {
+    color: orange !important; /* Specificity: 0,0,0,1, but marked as important */
+}
+
+If you have an <h1> element inside an element with the ID header, the text color will be blue because the ID selector has a higher specificity. However, if you add the !important declaration to the last rule, the text color will be orange, regardless of the specificity of the other rules.
+
+Summary
+
+Specificity determines which styles apply based on the type of selectors used.
+
+The cascade determines the order of application of styles based on specificity, source order, and importance.
+
+Understanding both concepts is crucial for effectively managing and troubleshooting CSS styles in web development.
