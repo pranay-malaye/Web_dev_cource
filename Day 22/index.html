@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 12px;
+        }
+
+        .box {
+            box-sizing: border-box;
+            border: 2px solid;
+            margin: auto;
+            width: 80vw;
+            height: 10vh;
+            font-size: 18px;
+            background-color: aquamarine;
+        }
+
+        .container {
+            box-sizing: border-box;
+            border: 2px solid black;
+            margin: 23px auto;
+            font-size: 18px;
+            width: 80vw;
+            /* height: 90vh; */
+            min-height: 80vh;
+            background-color: aqua;
+
+        }
+
+        .container>div {
+            font-size: 2em;
+            border: 2px solid red;
+            width: 50%;
+
+        }
+
+        .container>div>div {
+            border: 2px solid blue;
+            width: 50%;
+        }
+
+        .mycont {
+            border: 2px solid black;
+            box-sizing: border-box;
+            margin: 23px auto;
+            font-size: 18px;
+            /* width: 100vmin; */
+            width: 80vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        this is the box
+    </div>
+
+    <div class="container">
+        <div>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil odit, facere ab quis unde id architecto
+            soluta
+            harum veniam odio voluptate accusamus, enim deleniti, totam similique modi tempora atque voluptatum? Ullam
+            magni
+            quam nostrum et soluta atque voluptatibus voluptates aut suscipit dolorem nobis maxime unde fugiat, error
+            facere
+            commodi. Rem eos nemo dolores minus ipsam!
+
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nobis eius vero provident repellendus
+                fuga
+                ipsa in, impedit vitae eveniet repudiandae ipsum earum.
+            </div>
+        </div>
+
+        lorem999
+    </div>
+
+    <div class="mycont">
+        i am anather container
+    </div>
+</body>
+
+</html>
